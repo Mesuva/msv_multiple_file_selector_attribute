@@ -1,4 +1,7 @@
 <?php
+
+defined('C5_EXECUTE') or die('Access Denied.');
+
 use Concrete\Core\File\Type\Type as FileType;
 
 echo '<ul class="list-group multiple-file-list" id="' . $id . '">';
