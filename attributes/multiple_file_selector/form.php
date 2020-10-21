@@ -69,7 +69,7 @@ echo "<div href=\"#\" id=\"" . $id . "_launch\" data-max-items=\"" . $maxItems .
 				e.preventDefault();
 
 				var options = {
-      				multipleSelection: true " . $filter . "
+      				multipleSelection: false " . $filter . "
  				}
 
 				ConcreteFileManager.launchDialog(function (data) {
