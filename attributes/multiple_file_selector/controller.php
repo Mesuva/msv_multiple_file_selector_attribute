@@ -74,7 +74,11 @@ class Controller extends DefaultController
     public function createAttributeValueFromRequest()
     {
         $data = $this->post();
-        $list = implode(',', $data['value']);
+        $list = '';
+        if (is_array( $data['value'])) {
+            $list = implode(',', $data['value']);
+        }
+
         return $this->createAttributeValue($list);
     }
 
