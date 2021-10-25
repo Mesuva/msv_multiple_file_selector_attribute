@@ -1,6 +1,7 @@
 <?php
 namespace Concrete\Package\MsvMultipleFileSelectorAttribute\Attribute\MultipleFileSelector;
 
+use Concrete\Core\Asset\AssetList;
 use Concrete\Core\File\File;
 use Concrete\Core\Attribute\DefaultController;
 use Concrete\Core\Attribute\FontAwesomeIconFormatter;
@@ -12,7 +13,7 @@ class Controller extends DefaultController
 {
     public function getIconFormatter()
     {
-        return new FontAwesomeIconFormatter('files-o');
+        return new FontAwesomeIconFormatter('images fa-files-o');
     }
 
     public function getSearchIndexValue()
@@ -89,7 +90,17 @@ class Controller extends DefaultController
 		$this->set('type', $settings->getType());
 		$this->set('maxItems', $settings->getMaxItems());
 		$this->set('id', $this->app->make('helper/validation/identifier')->getString(8));
-        $this->requireAsset('core/file-manager');
+
+        $multiple = true;
+
+        $al = AssetList::getInstance();
+        if ($al->getAssetGroup('core/file-manager')) {
+            $this->requireAsset('core/file-manager');
+            $multiple = false;
+        }
+
+        $this->set('multiple', $multiple);
+
 	}
 
     public function composer()
