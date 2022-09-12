@@ -8,7 +8,7 @@ echo '<ul style="margin-bottom: 10px" class="list-group multiple-file-list" id="
 if (!empty($values)) {
     foreach ($values as $file) {
         $thumb = $file->getListingThumbnailImage();
-        echo '<li class="list-group-item"><i class="fa fa-arrows-v"></i>' . $thumb . ' ' . $file->getTitle() . '<a><i class="pull-right float-right fa fa-minus-circle"></i></a><input type="hidden" name="' . $this->field('value') . '[]" value="' . $file->getFileID() . '" /></li>';
+        echo '<li class="list-group-item"><i class="fa fa-arrows-v"></i>' . $thumb . ' ' . $file->getTitle() . '<a><i class="pull-right float-right float-end fa fa-minus-circle"></i></a><input type="hidden" name="' . $this->field('value') . '[]" value="' . $file->getFileID() . '" /></li>';
     }
 }
 echo '</ul>';
@@ -126,6 +126,6 @@ echo "<div href=\"#\" id=\"" . $id . "_launch\" data-max-items=\"" . $maxItems .
     .ccm-ui .multiple-file-list .fa-arrows-v {margin-right: 10px;}
     .ccm-ui .multiple-file-list img {max-width: 60px!important; display: inline!important; margin-right: 10px;}
     .ccm-ui .multiple-file-list .fa {cursor: pointer}
-    .ccm-ui .multiple-file-list a:hover {color: red} 
+    .ccm-ui .multiple-file-list a:hover {color: red !important} 
 </style>
 ";
