@@ -8,7 +8,7 @@ class Controller extends Package {
 
 	protected $pkgHandle = 'msv_multiple_file_selector_attribute';
 	protected $appVersionRequired = '8.0';
-	protected $pkgVersion = '0.9';
+	protected $pkgVersion = '1.0';
 
 	public function getPackageDescription() {
 		return t("Attribute that allows the selection of multiple files/images");

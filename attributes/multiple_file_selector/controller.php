@@ -76,7 +76,7 @@ class Controller extends DefaultController
     {
         $data = $this->post();
         $list = '';
-        if (is_array( $data['value'])) {
+        if (isset($data['value']) && is_array($data['value'])) {
             $list = implode(',', $data['value']);
         }
 
