@@ -1,6 +1,6 @@
 # Multiple File Selector Attribute
 
-A multiple file selector attribute for concrete5 version v8.
+A multiple file selector attribute for Concrete CMS version v9 (and v8).
 
 - Allow multiple files to be selected from the file manager
 - Selected files can be dragged and dropped to re-order
